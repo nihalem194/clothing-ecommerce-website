@@ -1,0 +1,6 @@
+$kind: http-request
+name: List Categories
+method: GET
+url: '{{baseUrl}}/api/v1/categories/'
+order: 1000
+description: Not yet implemented

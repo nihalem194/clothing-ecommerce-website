@@ -1,0 +1,14 @@
+$kind: http-request
+name: Refresh Token
+method: POST
+url: '{{baseUrl}}/api/v1/auth/api/token/refresh/'
+order: 5000
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "refresh": "{{refreshToken}}"
+    }

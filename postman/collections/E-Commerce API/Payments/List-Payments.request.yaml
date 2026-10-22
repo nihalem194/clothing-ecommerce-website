@@ -1,0 +1,6 @@
+$kind: http-request
+name: List Payments
+method: GET
+url: '{{baseUrl}}/api/v1/payments/'
+order: 1000
+description: Not yet implemented

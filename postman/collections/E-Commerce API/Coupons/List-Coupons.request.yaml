@@ -1,0 +1,6 @@
+$kind: http-request
+name: List Coupons
+method: GET
+url: '{{baseUrl}}/api/v1/coupons/'
+order: 1000
+description: Not yet implemented

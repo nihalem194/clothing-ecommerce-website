@@ -1,0 +1,6 @@
+$kind: http-request
+name: Get Wallet
+method: GET
+url: '{{baseUrl}}/api/v1/wallets/'
+order: 1000
+description: Not yet implemented

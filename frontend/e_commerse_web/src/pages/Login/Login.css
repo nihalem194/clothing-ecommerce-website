@@ -1,0 +1,74 @@
+.image-content{
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQISg609QSY_tICJNYOCSRBvB6-0E_uhDvydpL1Zxum1A&s=10');
+    background-size: cover;
+    width:100%;
+    height: 100%;
+    }
+
+
+.login-form {
+  width: 100%;
+  max-width: 400px;
+  
+}
+
+.login-form h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 10px;
+}
+
+.login-subtitle {
+  color: #777;
+  margin-bottom: 30px;
+}
+
+.login-form .form-label {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.login-form .form-control {
+  min-height: 48px;
+  border-radius: 7px;
+  padding: 12px;
+  border-color: #ddd;
+}
+
+.login-form .form-control:focus {
+  border-color: #111;
+  box-shadow: 0 0 0 0.15rem rgba(0, 0, 0, 0.08);
+}
+
+.forgot-link,
+.register-text a {
+  color: #111;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.forgot-link:hover,
+.register-text a:hover {
+  text-decoration: underline;
+}
+
+.login-submit-btn {
+  min-height: 48px;
+  background: #111;
+  color: #fff;
+  border: 1px solid #111;
+  border-radius: 7px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.login-submit-btn:hover {
+  background: #333;
+}
+
+.register-text {
+  font-size: 14px;
+  color: #777;
+}

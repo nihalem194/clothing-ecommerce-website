@@ -1,0 +1,15 @@
+$kind: http-request
+name: Token Obtain Pair
+method: POST
+url: '{{baseUrl}}/api/v1/auth/api/token'
+order: 4000
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "email": "johndoe@example.com",
+      "password": "StrongPass@123"
+    }
