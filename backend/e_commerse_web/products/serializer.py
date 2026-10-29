@@ -5,8 +5,8 @@ from product_images.serializer import ProductImageSrializers
 
 
 class ProductSerializer(serializers.ModelSerializer):
-    varients=ProductVarientSerializer(many=True,read_only=True)
-    images=ProductImageSrializers(many=True,read_only=True)
+    productvariant=ProductVarientSerializer(many=True,read_only=True)
+    productimage=ProductImageSrializers(many=True,read_only=True)
     class Meta:
         model=Products
         fields="__all__"

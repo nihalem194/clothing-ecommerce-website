@@ -1,12 +1,7 @@
-import { useState } from "react"
+import { Link } from "react-router-dom"
+import { IoMdClose } from "react-icons/io"
 
-
-const CartDrawer=()=>{
-    const [drawerOpen,setdrawerOpen]=useState(false)
-
-    const toggleCartDrawer=()=>{
-        setdrawerOpen(!drawerOpen)
-    }
+const CartDrawer=({drawerOpen,toggleCartDrawer})=>{
 
 
     return(
@@ -16,9 +11,33 @@ const CartDrawer=()=>{
 
                 {/* close buttun */}
                 <div className="flex justify-end p-4">
-                    <IoMdClose className='h-6 w-6 bg-gray-50 ' />
+                    <button onClick={toggleCartDrawer}>
+                        {/* close icon */}  
+                        <IoMdClose className='h-6 w-6 text-grey-500'/>
+                    </button>
+                   
                 </div>
+                
+                {/* cart scrollable area */}
+                <div className="flex-grow px-4 overflow-y-auto ">
+                    <h2 className="text-xl  font-semibold mb-4">Your Cart</h2>
+
+                </div>
+
+                {/* checkout button */}
+
+                <div className="px-4 sticky bg-white bottom-0">
+                    <Link>
+                        <button className="w-full text-white bg-black hover:bg-gray-500 py-3">Checkout</button>
+                    </Link>
+                    <p className="text-sm text-gray-500 mt-2 text-center ">Shipping, Taxes, and discount calculated at checkout</p>
+                </div>
+
+                
+
             </div>
+                
+            
         </>
     )
 }

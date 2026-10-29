@@ -4,7 +4,7 @@ from products.models import Products
 # Create your models here.
 
 class ProductImages(models.Model):
-    product=models.ForeignKey(Products,on_delete=models.CASCADE,related_name='productimages')
+    product=models.ForeignKey(Products,on_delete=models.CASCADE,related_name='productimage')
     image=models.ImageField(upload_to='productimage/')
     alt_text=models.CharField(max_length=255)
     is_primary=models.BooleanField()

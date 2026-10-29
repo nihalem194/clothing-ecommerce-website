@@ -2,7 +2,11 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Home.css";
-import HeroCard from "../../components/Common/HeroCard/HeroCard";
+import NewArrivals from "../products/NewArrivals";
+import GenterCollectionSection from "../products/GenterCollectionSection";
+import NewArrivalsCard from "../products/NewArrivalsCard";
+import ProductDetails from "../products/ProductDetails";
+
 
 // const categories = [
 //   {
@@ -88,11 +92,12 @@ function Home() {
 
 
       {/* category */}
-      <section className="catogory">
-        
+      <GenterCollectionSection />
 
-      </section>
-    
+      {/* New Arrivals */}
+      <NewArrivals />
+
+      
 
     
     </main>

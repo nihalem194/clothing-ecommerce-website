@@ -1,8 +1,21 @@
 import Search from "../Search/Search";
 import "./Header.css";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import CartDrawer from "../../../pages/Cart/CartDrawer";
+import { IoMdClose } from "react-icons/io";
+import { HiBars3BottomRight } from "react-icons/hi2";
 
 function Header() {
+  const [drawerOpen, setdrawerOpen] = useState(false);
+  const [navdraweopen, setnavdrawer] = useState(false);
+
+  const navcarttoggler = () => {
+    setnavdrawer(!navdraweopen);
+  };
+  const toggleCartDrawer = () => {
+    setdrawerOpen(!drawerOpen);
+  };
   return (
     <>
       <header className="w-100 sticky-top bg-white shadow-sm">
@@ -19,7 +32,10 @@ function Header() {
             <span className="navbar-toggler-icon"></span>
           </button>
 
-          <Link to="/" className="navbar-brand mx-auto order-0 d-lg-none d-flex">
+          <Link
+            to="/"
+            className="navbar-brand mx-auto order-0 d-lg-none d-flex"
+          >
             <h2 className="m-0 fw-bold" style={{ letterSpacing: "2px" }}>
               FASCO
             </h2>
@@ -45,16 +61,23 @@ function Header() {
               </Link>
             </li>
             <li className="nav-item position-relative">
-              <Link to="#">
+              <button
+                type="button"
+                className="btn p-0 border-0 bg-transparent"
+                onClick={toggleCartDrawer}
+              >
                 <i className="bi bi-bag fs-5 text-dark"></i>
                 <span className="position-absolute top-0 start-100 translate-middle cart-qount rounded-pill">
                   0
                 </span>
-              </Link>
+              </button>
             </li>
           </ul>
 
-          <div className="collapse navbar-collapse justify-content-between" id="navbarnav">
+          <div
+            className="collapse navbar-collapse justify-content-between"
+            id="navbarnav"
+          >
             <Link to="/" className="navbar-brand order-0 d-none d-lg-flex">
               <h2 className="m-0 fw-bold" style={{ letterSpacing: "2px" }}>
                 FASCO
@@ -81,7 +104,12 @@ function Header() {
 
             <ul className="navbar-nav d-none d-lg-flex align-items-center gap-4">
               <li className="nav-item">
-                <Link to="/admin" className="block bg-black text-sm px-2 text-white " >Admin</Link>
+                <Link
+                  to="/admin"
+                  className="block bg-black text-sm px-2 text-white "
+                >
+                  Admin
+                </Link>
               </li>
               <li className="nav-item">
                 {/* <Link to="#" data-bs-toggle="modal" data-bs-target="#SearchModel">
@@ -90,7 +118,11 @@ function Header() {
                 <Search />
               </li>
               <li className="nav-item">
-                <Link to="#" data-bs-toggle="modal" data-bs-target="#SignupModel">
+                <Link
+                  to="#"
+                  data-bs-toggle="modal"
+                  data-bs-target="#SignupModel"
+                >
                   <i className="bi bi-person fs-5 text-dark"></i>
                 </Link>
               </li>
@@ -103,16 +135,37 @@ function Header() {
                 </Link>
               </li>
               <li className="nav-item position-relative">
-                <Link to="#">
-                  <i className="bi bi-bag fs-5 text-dark"></i>
+                {/* <Link to="#">
+                  <i className="bi bi-bag fs-5 text-dark" onClick={toggleCartDrawer}></i>
                   <span className="position-absolute top-0 start-100 translate-middle cart-qount rounded-pill">
                     0
                   </span>
-                </Link>
+                </Link> */}
+                <button
+                  type="button"
+                  className="btn p-0 border-0 bg-transparent"
+                  onClick={toggleCartDrawer}
+                >
+                  <i className="bi bi-bag fs-5 text-dark"></i>
+
+                  <span className="position-absolute top-0 start-100 translate-middle cart-qount rounded-pill">
+                    0
+                  </span>
+                </button>
+
+                {/* <button onClick={navcarttoggler} className="d-lg-none">
+                  <HiBars3BottomRight className="h-6 w-6 text-gray-700" />
+                </button> */}
+                
               </li>
             </ul>
+
           </div>
         </nav>
+        <CartDrawer
+          drawerOpen={drawerOpen}
+          toggleCartDrawer={toggleCartDrawer}
+        />
       </header>
     </>
   );
